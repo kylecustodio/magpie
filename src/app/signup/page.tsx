@@ -4,7 +4,7 @@ import Button from "@/components/button";
 import Input from "@/components/input";
 import signUp from "@/firebase/auth/signup";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 const SignUp = () => {
   const router = useRouter();
@@ -12,16 +12,17 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = async () => {
-    console.log(email, password);
-    // const { result, error } = await signUp(email, password);
+  const onSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    const { result, error } = await signUp(email, password);
 
-    // if (error) {
-    // handle error
-    // return;
-    // }
+    if (error) {
+      // handle error
+      console.error(error);
+      return;
+    }
 
-    // router.push("/home");
+    router.push("/home");
   };
 
   return (
@@ -33,12 +34,16 @@ const SignUp = () => {
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             required
+            name="email"
+            id="email"
             placeholder="example@example.com"
           />
           <Input
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             required
+            name="password"
+            id="password"
             placeholder="password"
           />
           <Button type="submit">Sign up</Button>
