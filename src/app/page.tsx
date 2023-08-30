@@ -3,7 +3,7 @@
 import Button from "@/components/button";
 import { useRouter } from "next/navigation";
 
-export default function Home() {
+const Landing = () => {
   const router = useRouter();
 
   return (
@@ -17,4 +17,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Landing;

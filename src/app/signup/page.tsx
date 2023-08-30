@@ -22,7 +22,7 @@ const SignUp = () => {
       return;
     }
 
-    router.push("/feed");
+    router.push("/home");
   };
 
   return (

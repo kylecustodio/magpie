@@ -4,7 +4,7 @@ import { useAuthContext } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-const Feed = () => {
+const Home = () => {
   const auth = useAuthContext();
   const router = useRouter();
 
@@ -14,7 +14,7 @@ const Feed = () => {
     }
   }, [auth]);
 
-  return <div>feed workds</div>;
+  return <div>Home workds</div>;
 };
 
-export default Feed;
+export default Home;
