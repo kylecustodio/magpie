@@ -1,3 +1,4 @@
+import { AuthContextProvider } from "@/context/AuthContext";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
@@ -11,7 +12,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={sourceSans.className}>{children}</body>
+      <body className={sourceSans.className}>
+        <AuthContextProvider>{children}</AuthContextProvider>
+      </body>
     </html>
   );
 }
