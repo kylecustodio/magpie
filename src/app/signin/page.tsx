@@ -2,11 +2,11 @@
 
 import Button from "@/components/button";
 import Input from "@/components/input";
-import signUp from "@/firebase/auth/signup";
+import signIn from "@/firebase/auth/signin";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { useState, FormEvent } from "react";
 
-const SignUp = () => {
+const SignIn = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const SignUp = () => {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const { result, error } = await signUp(email, password);
+    const { result, error } = await signIn(email, password);
 
     if (error) {
       // handle error
@@ -28,7 +28,7 @@ const SignUp = () => {
   return (
     <div className="h-screen w-screen bg-fuchsia-200 p-24">
       <div className="flex flex-col items-center gap-10">
-        <h1 className="text-4xl text-black">Sign up</h1>
+        <h1 className="text-4xl text-black">Sign in</h1>
         <form className="flex flex-col gap-8" onSubmit={onSubmit}>
           <Input
             type="email"
@@ -46,11 +46,11 @@ const SignUp = () => {
             id="password"
             placeholder="password"
           />
-          <Button type="submit">Sign up</Button>
+          <Button type="submit">Sign in</Button>
         </form>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default SignIn;
