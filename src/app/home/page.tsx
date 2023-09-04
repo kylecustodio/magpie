@@ -14,7 +14,9 @@ const Home = () => {
     }
   }, [auth]);
 
-  return <div className="w-screen h-screen bg-fucshia-200">Home workds</div>;
+  return (
+    <div className="w-screen h-screen bg-white text-black">Home workds</div>
+  );
 };
 
 export default Home;

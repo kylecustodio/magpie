@@ -26,7 +26,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-fuchsia-200 p-24">
+    <div className="h-screen w-screen bg-white p-24">
       <div className="flex flex-col items-center gap-10">
         <h1 className="text-4xl text-black">Sign in</h1>
         <form className="flex flex-col gap-8" onSubmit={onSubmit}>
