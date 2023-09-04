@@ -13,7 +13,7 @@ type ContextState = { user: User | null };
 
 const auth = getAuth(app);
 
-export const AuthContext = createContext<ContextState | undefined>(undefined);
+export const AuthContext = createContext<ContextState>({ user: null });
 
 export const useAuthContext = () => useContext(AuthContext);
 
