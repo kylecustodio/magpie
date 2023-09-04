@@ -1,9 +1,9 @@
 import { AuthContextProvider } from "@/context/AuthContext";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Source_Sans_3 } from "next/font/google";
+import { Noto_Sans_Mono } from "next/font/google";
 
-const sourceSans = Source_Sans_3({ subsets: ["latin"] });
+const font = Noto_Sans_Mono({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={sourceSans.className}>
+      <body className={font.className}>
         <AuthContextProvider>{children}</AuthContextProvider>
       </body>
     </html>
