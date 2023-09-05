@@ -2,7 +2,7 @@
 
 import Button from "@/components/button";
 import TextArea from "@/components/text-area";
-import { useAuthContext } from "@/context/AuthContext";
+import { useAuthContext } from "@/context/auth-context";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 
