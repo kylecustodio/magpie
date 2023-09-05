@@ -36,7 +36,7 @@ const SignIn = () => {
             required
             name="email"
             id="email"
-            placeholder="example@example.com"
+            placeholder="email"
           />
           <Input
             type="password"
